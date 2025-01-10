@@ -27,3 +27,12 @@ class Review(db.Model):
     rating = db.Column(db.Integer)  # Rating scale: 1-5
     job_id = db.Column(db.Integer, db.ForeignKey('job.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+
+class JobApplication(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    company_name = db.Column(db.String(100), nullable=False)
+    position = db.Column(db.String(100), nullable=False)
+    status = db.Column(db.String(20), default="Applied")
+    date_applied = db.Column(db.Date, nullable=False)
+
