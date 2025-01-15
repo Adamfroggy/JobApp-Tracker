@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, render_template
+
 
 app = Flask(__name__)
 
@@ -6,6 +7,14 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return "Welcome to the JobApp-Tracker!"
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('error.html',
+                           error='404 Not Found',
+                           message='The page you are \
+                           looking for does not exist.'), 404
 
 
 @app.route('/submit_contact', methods=['POST'])
