@@ -35,4 +35,3 @@ class JobApplication(db.Model):
     position = db.Column(db.String(100), nullable=False)
     status = db.Column(db.String(20), default="Applied")
     date_applied = db.Column(db.Date, nullable=False)
-
