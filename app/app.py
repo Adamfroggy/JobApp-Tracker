@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
 
 app = Flask(__name__)
@@ -15,6 +15,16 @@ def page_not_found(error):
                            error='404 Not Found',
                            message='The page you are \
                            looking for does not exist.'), 404
+
+
+@app.route('/apply', methods=['POST'])
+def apply():
+    company = request.form['company']
+    position = request.form['position']
+    resume = request.files['resume']  # Save the resume file if needed
+    # Simulate saving the job application (you can save to a database or a file)
+    print(f"Job Application Submitted: {company} - {position}")
+    return redirect(url_for('home'))  # Redirect back to home after submission
 
 
 @app.route('/submit_contact', methods=['POST'])
