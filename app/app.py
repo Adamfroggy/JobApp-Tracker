@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Welcome to the JobApp-Tracker!"
+    return render_template('home.html')
 
 
 @app.errorhandler(404)
