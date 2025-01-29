@@ -22,18 +22,20 @@ def apply():
     company = request.form['company']
     position = request.form['position']
     resume = request.files['resume']  # Save the resume file if needed
-    # Simulate saving the job application (you can save to a database or a file)
+    # Simulate saving the job application
+    # (you can save to a database or a file)
     print(f"Job Application Submitted: {company} - {position}")
     return redirect(url_for('home'))  # Redirect back to home after submission
 
 
-@app.route('/submit_contact', methods=['POST'])
-def submit_contact():
+@app.route('/send_message', methods=['POST'])
+def send_message():
     name = request.form['name']
     email = request.form['email']
     message = request.form['message']
-    # Process the contact form data (e.g., save to database, send email)
-    return f"Thanks for your message, {name}!"
+    # Simulate sending the message (you can integrate email functionality)
+    print(f"Message from {name} ({email}): {message}")
+    return redirect(url_for('home'))  # Redirect back to home after submission
 
 
 if __name__ == '__main__':
