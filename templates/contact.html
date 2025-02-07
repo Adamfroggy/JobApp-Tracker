@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<body>
+    <h1>Contact Information</h1>
+    <form action="/submit_contact" method="POST">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+<!-- Add this to the bottom of the body section of your templates -->
+{% include 'footer.html' %}
+
+<!-- Add this to the top of the body section of your templates -->
+{% include 'navbar.html' %}
