@@ -1,0 +1,44 @@
+<!-- templates/jobs.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Applications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Job Applications</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Submit a New Job Application</h2>
+            <form action="/apply" method="post">
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" required>
+
+                <label for="position">Position:</label>
+                <input type="text" id="position" name="position" required>
+
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf, .docx" required>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 JobApp Tracker</p>
+    </footer>
+</body>
+</html>
+
+<!-- Add this to the bottom of the body section of your templates -->
+{% include 'footer.html' %}
+
+<!-- Add this to the top of the body section of your templates -->
+{% include 'navbar.html' %}
+

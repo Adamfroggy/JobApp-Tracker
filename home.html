@@ -1,0 +1,42 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobApp Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to JobApp Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/jobs">Job Applications</a></li>
+                <li><a href="/reviews">Job Reviews</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Track Your Job Applications</h2>
+            <p>Keep track of your job applications, reviews, and more.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 JobApp Tracker</p>
+    </footer>
+</body>
+</html>
+
+
+<!-- Add this to the bottom of the body section of your templates -->
+{% include 'footer.html' %}
+
+<!-- Add this to the top of the body section of your templates -->
+{% include 'navbar.html' %}
+
